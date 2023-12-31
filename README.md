@@ -1,4 +1,3 @@
-<div style="background-color: #AAAAAA;">
 # Linux Commands for Beginners
 
 ## Introduction
@@ -46,5 +45,3 @@ For detailed usage see: [scp.md](scp)
 | `2>>`    | Redirects the error output of a command to a file, appending the output to the file if it already exists |
 | `&>`     | Redirects both the standard output and error output of a command to a file, overwriting the file if it already exists |
 | `&>>`    | Redirects both the standard output and error output of a command to a file, appending the output to the file if it already exists |
-
-</div>
