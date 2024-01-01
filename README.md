@@ -7,7 +7,7 @@ Welcome to the world of Linux commands! This guide is designed for beginners to 
 # Commands List
 
 
-| Command | Description | File |
+| Command | Description | More Details |
 |---------|-------------|------|
 | `pwd`   | Print the current working directory | [pwd.md](pwd) |
 | `ls`    | List files and directories | [ls.md](ls) |
