@@ -9,7 +9,7 @@ In other words we can say absolute path is a complete path from start of actual 
 
 On running this command
 ```bash
-pratham@Pratham-Inspiron:~/linux-cmds$ pwd
+pwd
 ```
 I get the following output
 ```bash
