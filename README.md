@@ -9,22 +9,22 @@ Welcome to the world of Linux commands! This guide is designed for beginners to 
 
 | Command | Description | More Details |
 |---------|-------------|------|
-| `pwd`   | Print the current working directory | [pwd.md](pwd) |
-| `ls`    | List files and directories | [ls.md](ls) |
-| `cd`    | Change directory | [cd.md](cd) |
-| `cat`   | Concatenate and display file content | [cat.md](cat) |
-| `cp`    | Copy files and directories | [cp.md](cp) |
-| `mv`    | Move or rename files and directories | [mv.md](mv) |
-| `mkdir` | Create directories | [mkdir.md](mkdir) |
-| `rm`    | Remove files and directories | [rm.md](rm) |
-| `rmdir` | Remove empty directories | [rmdir.md](rmdir) |
-| `grep`  | Search for patterns in files | [grep.md](grep) |
-| `head`  | Display the beginning of a file | [head.md](head) |
-| `tail`  | Display the end of a file | [tail.md](tail) |
-| `diff`  | Compare files line by line | [diff.md](diff) |
-| `wc`    | Count lines, words, and characters in a file | [wc.md](wc) |
-| `tar`   | Archive files | [tar.md](tar) |
-| `chmod` | Change file permissions | [chmod.md](chmod) |
+| `pwd`   | Print the current working directory | [pwd.md](md_files/pwd.md) |
+| `ls`    | List files and directories | [ls.md](md_files/ls.md) |
+| `cd`    | Change directory | [cd.md](md_files/cd.md) |
+| `cat`   | Concatenate and display file content | [cat.md](md_files/cat.md) |
+| `cp`    | Copy files and directories | [cp.md](md_files/cp.md) |
+| `mv`    | Move or rename files and directories | [mv.md](md_files/mv.md) |
+| `mkdir` | Create directories | [mkdir.md](md_files/mkdir.md) |
+| `rm`    | Remove files and directories | [rm.md](md_files/rm.md) |
+| `rmdir` | Remove empty directories | [rmdir.md](md_files/rmdir.md) |
+| `grep`  | Search for patterns in files | [grep.md](md_files/grep.md) |
+| `head`  | Display the beginning of a file | [head.md](md_files/head.md) |
+| `tail`  | Display the end of a file | [tail.md](md_files/tail.md) |
+| `diff`  | Compare files line by line | [diff.md](md_files/diff.md) |
+| `wc`    | Count lines, words, and characters in a file | [wc.md](md_files/wc.md) |
+| `tar`   | Archive files | [tar.md](md_files/tar.md) |
+| `chmod` | Change file permissions | [chmod.md](md_files/chmod.md) |
 
 ### Most Important: `scp`
 
@@ -32,9 +32,9 @@ The `scp` command is used to securely copy files between a local and remote host
 
 To use `scp`, you need to specify the source file or directory and the destination where you want to copy the file or directory. The source and destination can be on the local machine or on a remote machine.
 
-For detailed usage see: [scp.md](scp)
+For detailed usage see: [scp.md](md_files/scp.md)
 
-# [Redirection Operators](operator)
+# [Redirection Operators](md_files/operator.md)
 
 | Operator | Description |
 |----------|-------------|
