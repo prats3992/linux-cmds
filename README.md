@@ -23,7 +23,6 @@ Welcome to the world of Linux commands! This guide is designed for beginners to 
 | `tail`  | Display the end of a file | [tail.md](md_files/tail.md) |
 | `diff`  | Compare files line by line | [diff.md](md_files/diff.md) |
 | `wc`    | Count lines, words, and characters in a file | [wc.md](md_files/wc.md) |
-| `tar`   | Archive files | [tar.md](md_files/tar.md) |
 | `chmod` | Change file permissions | [chmod.md](md_files/chmod.md) |
 
 ### Most Important: `scp`
