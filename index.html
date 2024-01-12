@@ -37,8 +37,7 @@
             <h1>Linux How To</h1>
             <p>
               A Linux command line cheatsheet for basics. Most suitable for
-              beginners.</p>
-              <p>For more commands and advanced stuff, check out <a href="https://github.com/prats3992/linux-cmds">Here</a>
+              beginners. For more commands and advanced stuff, check out <a href="https://github.com/prats3992/linux-cmds">Here</a>
             </p>
           </div>
         </div>
@@ -60,7 +59,6 @@
             <li><a href="#scp">scp</a></li>
             <li><a href="#operators">Operators</a></li>
             <li><a href="#oneliners">One Liners</a></li>
-            
           </ul>
         </nav>
         <nav>
@@ -69,6 +67,7 @@
             <li><a href="#cat">cat</a></li>
           </ul>
         </nav>
+        </header>
 
       <!-- Main -->
       <div id="main">
@@ -76,7 +75,7 @@
         <article id="cd">
           <h2 class="major">cd</h2>
           <!-- <span class="image main"><img src="images/pic01.jpg" alt="" /></span> -->
-          <p>Since Linux is supposed to be a CLI, the <code>cd</code> command helps in moving around the computer’s folders and files, which we call the file system. The <code>cd</code> stands for "change directory."</p>
+          <p>Since Linux is supposed to be a CLI, the <code>cd</code> command helps in moving around the computer's folders and files, which we call the file system. The <code>cd</code> stands for "change directory."</p>
         
           <p>For the examples we are going to be using the following file tree:</p>
         
@@ -293,7 +292,6 @@
             </li>
           </ul>
         </article>
-        <!-- style="text-transform: none;" -->
 
         <article id="mv">
           <h2 class="major">mv</h2>
@@ -640,8 +638,8 @@
           <!-- Mermaid flowchart container -->
           <pre class="mermaid">
             flowchart LR
-            a["My Local Machine"] --> Linux_Servers --> d["Someone else's Local Machine"]
-              subgraph Linux_Servers
+            a["My Local Machine"] --> Linux_Server --> d["Someone else's Local Machine"]
+              subgraph Linux_Server
               direction LR
               b1(My server account)-->b{{"Someone Else's account"}}
               b{{"Someone Else's account"}}-->b1(My server account)
@@ -899,7 +897,7 @@
     multi-line text to be saved onto the file</code></pre>
         <p>Note that the 3<sup>rd</sup> line of <code>merged.txt</code> the words <i><u>badNow</u></i> combined because the first file had no trailing whitespaces so the second continued from exactly where the first file ended.</p>
     </article>
-    
+
 
         <!-- Elements -->
         <article id="elements">
@@ -1049,7 +1047,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                   </tr>
                 </tfoot>
               </table>
-            </div>
+      </div>
 
             <h4>Alternate</h4>
             <div class="table-wrapper">
