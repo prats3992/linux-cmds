@@ -1389,7 +1389,7 @@ body.is-preload #bg:before {
   -ms-transition: opacity 0.325s ease-in-out;
   transition: opacity 0.325s ease-in-out;
   /* position: relative; */
-  /* margin-top: 3.5rem; */
+  margin-top: 2rem;
 }
 
 #header > *:before {
