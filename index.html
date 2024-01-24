@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Linux Hacks</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript
-      ><link rel="stylesheet" href="assets/css/noscript.css"
-    /></noscript>
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
-    <link rel="manifest" href="images/site.webmanifest" />
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VPMYT5LTL6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-VPMYT5LTL6');
-</script>
-  </head>
+<head>
+  <title>Linux Hacks</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript>
+    <link rel="stylesheet" href="assets/css/noscript.css" />
+  </noscript>
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+  <link rel="manifest" href="images/site.webmanifest" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VPMYT5LTL6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-VPMYT5LTL6');
+  </script>
+</head>
   
   <body class="is-preload">
     <!-- Wrapper -->
@@ -51,7 +49,7 @@
             </p>
           </div>
         </div>
-        <nav>
+        <nav style="margin-top: 3.5rem;">
           <ul>
             <li><a href="#cd">cd</a></li>
             <li><a href="#cp">cp</a></li>
@@ -68,13 +66,20 @@
             <li><a href="#diff">diff</a></li>
             <li><a href="#scp">scp</a></li>
             <li><a href="#operators">Operators</a></li>
-            <li><a href="#oneliners">One Liners</a></li>
+            <li><a href="#history">history</a></li>
           </ul>
         </nav>
         <nav>
           <ul>
             <li><a href="#rmdir">rmdir</a></li>
             <li><a href="#cat">cat</a></li>
+            <li><a href="#oneliners">One Liners</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <ul>
+            <li><a href="#grep">grep</a></li>
+            <li><a href="#chmod">chmod</a></li>
           </ul>
         </nav>
         </header>
@@ -642,6 +647,7 @@
             <li>Copy files from a local host to a remote host and vice versa.</li>
             <li>Copy files between two different remote hosts on the same server.</li>
           </ul>
+          <p>Refer the diagram below for understanding the same and if it is not showing kindly reload the page.</p>
           <script type="module">
             import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
           </script>
