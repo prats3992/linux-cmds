@@ -73,8 +73,8 @@
           <ul>
             <li><a href="#rmdir">rmdir</a></li>
             <li><a href="#cat">cat</a></li>
-            <li><a href="#oneliners">touch</a></li>
-            <li><a href="#oneliners">wc</a></li>
+            <li><a href="#touch">touch</a></li>
+            <li><a href="#wc">wc</a></li>
             <li><a href="#chmod">chmod</a></li>
             <li><a href="#history">history</a></li>
           </ul>
@@ -765,14 +765,7 @@
           <h2 class="major">Some more common ones</h2>
           <!-- <span class="image main"><img src="images/pic01.jpg" alt="" /></span> -->
           <p>Here are some more commonly used one-liner commands:</p>
-      
-          <h3><code>wc</code> - Word Count</h3>
-          <p>The <code>wc</code> command is used to count the number of lines, words, and characters in a file.</p>
-          <h4>Syntax:</h4>
-          <pre><code>wc [options] file_name</code></pre>
-          <h4>Example:</h4>
-          <pre><code>wc temp.txt</code></pre>
-      
+           
           <h3><code>touch</code> - Create Empty File</h3>
           <p>The <code>touch</code> command is used to create an empty file or update the access and modification timestamps of an existing file.</p>
           <h4>Syntax:</h4>
@@ -904,6 +897,415 @@
         <p>Note that the 3<sup>rd</sup> line of <code>merged.txt</code> the words <i><u>badNow</u></i> combined because the first file had no trailing whitespaces so the second continued from exactly where the first file ended.</p>
     </article>
 
+    <article id="wc">
+      <h2 class="major">wc</h2>
+      <p><code>wc</code> is mainly used for counting purposes. It stands for word count and is used to find out the number of lines, word count, byte and characters count in the files passed to wc in the same order.</p>
+
+      <h3>Syntax</h3>
+      <pre><code class="bash">wc [option] file_name(s)</code></pre>
+
+      <h3>Usage</h3>
+
+      <!-- Example 1: BASIC USAGE -->
+      <h4>1. BASIC USAGE</h4>
+      <pre><code class="bash">wc juniors.txt
+5 15 75 juniors.txt
+      </code></pre>
+      <p>So, as we can compare with the file content, we have 5 lines (counting starts from 0), 15 words, and 75 characters.</p>
+
+      <!-- Example 2: USING ON MULTIPLE FILES IN ONE GO -->
+      <h4>2. USING ON MULTIPLE FILES IN ONE GO</h4>
+      <pre><code class="bash">wc juniors.txt friends.txt 
+5  15  75 juniors.txt
+3   4  27 friends.txt
+8  19 102 total
+      </code></pre>
+      <p>Here it also shows the total number of lines, words, and characters in all files passed to <code>wc</code>.</p>
+
+      <!-- Example 3: Get number of Lines -->
+      <h4>3. Get number of Lines</h4>
+      <pre><code class="bash">wc juniors.txt -l
+5 juniors.txt
+      </code></pre>
+      <pre><code class="bash">wc juniors.txt friends.txt -l
+5 juniors.txt
+3 friends.txt
+8 total
+      </code></pre>
+
+      <!-- Example 4: Get number of Words -->
+      <h4>4. Get number of Words</h4>
+      <pre><code class="bash">wc juniors.txt -w
+15 juniors.txt
+      </code></pre>
+      <pre><code class="bash">wc juniors.txt friends.txt -w
+15 juniors.txt
+4 friends.txt
+19 total
+      </code></pre>
+
+      <!-- Example 5: Get number of Characters or Bytes -->
+      <h4>5. Get number of Characters or Bytes</h4>
+      <pre><code class="bash">wc juniors.txt -c
+27 friends.txt
+      </code></pre>
+      <pre><code class="bash">wc juniors.txt -m
+27 friends.txt
+      </code></pre>
+
+      <h3>Application of <code>wc</code></h3>
+      <!-- Example: Application of wc -->
+      <p>Getting how many files and directories are in the current working directory</p>
+      <pre><code class="bash">ls
+README.md  assets  images  index.html  md_files
+      </code></pre>
+      <pre><code class="bash">ls | wc -l
+5
+      </code></pre>
+      <p>But notice the following</p>
+      <pre><code class="bash">ls -l
+total 36
+-rw-r--r-- 1 pratham pratham  2942 Jan  5 23:28 README.md
+drwxr-xr-x 6 pratham pratham  4096 Jan  5 23:25 assets
+drwxr-xr-x 2 pratham pratham  4096 Jan  5 23:25 images
+-rw-r--r-- 1 pratham pratham 17893 Jan  6 19:07 index.html
+drwxr-xr-x 2 pratham pratham  4096 Jan  6 21:32 md_files
+      </code></pre>
+      <pre><code class="bash">ls -l| wc -l
+6
+      </code></pre>
+      <p>See that the second output came out wrong as compared to expected; it is because <code>ls -l</code> gave an extra line at the start of its output that reads <code>total 36</code>.</p>
+  </article>
+
+  <article id="touch">
+    <h2 class="major">touch</h2>
+    <p><code>touch</code> is a command used in Unix and Unix-like operating systems to create, change, and modify timestamps of files.</p>
+
+    <h3>Syntax</h3>
+    <pre><code class="bash">touch [option] file_name(s)</code></pre>
+
+    <h3>Usage</h3>
+
+    <!-- Example 1: Creating a New File -->
+    <h4>1. Creating a New File</h4>
+    <pre><code class="bash">touch new_file.txt
+    </code></pre>
+    <p>This command creates a new empty file named <code>new_file.txt</code>.</p>
+
+    <!-- Example 2: Updating Timestamps -->
+    <h4>2. Updating Timestamps</h4>
+    <pre><code class="bash">touch existing_file.txt
+    </code></pre>
+    <p>This command updates the access and modification timestamps of an existing file named <code>existing_file.txt</code> which can be seen using <code>ls -l</code>.</p>
+
+    <!-- Example 3: Creating Multiple Files -->
+    <h4>3. Creating Multiple Files</h4>
+    <pre><code class="bash">touch file1.txt file2.txt file3.txt
+    </code></pre>
+    <p>This command creates multiple empty files in a single command.</p>
+
+    <!-- Example 4: Using Wildcards -->
+    <h4>4. Using Wildcards</h4>
+    <pre><code class="bash">touch *.txt
+    </code></pre>
+    <p>This command uses a wildcard to create empty files with the <code>.txt</code> extension.</p>
+
+    <!-- Example 5: Setting Specific Timestamps -->
+    <h4>5. Setting Specific Timestamps</h4>
+    <pre><code class="bash">touch -t 202201272359.59 file.txt
+    </code></pre>
+    <p>This command sets a specific timestamp (in the format <code>YYYYMMDDhhmm.ss</code>) for a file named <code>file.txt</code>.</p>
+
+</article>
+
+<article id="chmod">
+  <h2 class="major">chmod</h2>
+  <p>The <code>chmod</code> command is used to modify permissions, granting or restricting access to directories and files. Permissions include read (<code>r</code>), write (<code>w</code>), and execute (<code>x</code>).</p>
+
+  <h3>Syntax</h3>
+  <pre><code class="bash">chmod [OPTIONS] [MODE] file_name</code></pre>
+  <p><b>MODE:</b> The permissions to be set, represented by a three-digit octal number or alphabetic form.</p>
+
+  <h3>Some Important Information</h3>
+
+  <!-- Table: Operators and Definitions -->
+  <table>
+      <thead>
+          <tr>
+              <th>Operators</th>
+              <th>Definition</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td><code>+</code></td>
+              <td>Add permissions</td>
+          </tr>
+          <tr>
+              <td><code>-</code></td>
+              <td>Remove permissions</td>
+          </tr>
+          <tr>
+              <td><code>=</code></td>
+              <td>Set the permissions to the specified values</td>
+          </tr>
+      </tbody>
+  </table>
+
+  <!-- Table: Letters, Definitions, Octal Values -->
+  <table>
+      <thead>
+          <tr>
+              <th>Letters</th>
+              <th>Definition</th>
+              <th>Octal Values</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td><code>r</code></td>
+              <td>Read permission</td>
+              <td>4</td>
+          </tr>
+          <tr>
+              <td><code>w</code></td>
+              <td>Write permission</td>
+              <td>2</td>
+          </tr>
+          <tr>
+              <td><code>x</code></td>
+              <td>Execute permission</td>
+              <td>1</td>
+          </tr>
+      </tbody>
+  </table>
+
+  <blockquote class="important">
+      <p>First digit specifies the permission for Owner.</p>
+      <p>Second digit specifies the permission for Group.</p>
+      <p>Third digit specifies the permission for Others.</p>
+      <p>The digits are calculated by adding the values of the individual permissions.</p>
+  </blockquote>
+
+  <!-- Table: Reference and Class -->
+  <table>
+      <thead>
+          <tr>
+              <th>Reference</th>
+              <th>Class</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td><code>u</code></td>
+              <td>Owner</td>
+          </tr>
+          <tr>
+              <td><code>g</code></td>
+              <td>Group</td>
+          </tr>
+          <tr>
+              <td><code>o</code></td>
+              <td>Others</td>
+          </tr>
+          <tr>
+              <td><code>a</code></td>
+              <td>All</td>
+          </tr>
+      </tbody>
+  </table>
+
+  <h4>To check current file permissions</h4>
+  <pre><code class="bash">ls -l filename</code></pre>
+
+  <h3>How to use it?</h3>
+
+  <!-- Example: Making a file executable -->
+  <h4>Making a file executable</h4>
+  <pre><code class="bash">chmod a+x filename
+chmod +x filename
+chmod 111 filename
+  </code></pre>
+  <p>By default, it applies provided permissions to all (owner, groups, others).</p>
+
+  <!-- Example: Using Octal more proficiently -->
+  <h4>Using Octal more proficiently</h4>
+  <pre><code class="bash">chmod 764 filename
+  </code></pre>
+  <ul>
+      <li><b>7</b> represents permission of Owner which is (<code>rwx</code>). {4+2+1}</li>
+      <li><b>6</b> represents permission of Group which is (<code>rw</code>). {4+2}</li>
+      <li><b>4</b> represents permission of Others which is (<code>r</code>). {4}</li>
+  </ul>
+
+</article>
+
+<article id="grep">
+  <h2 class="major">grep</h2>
+  <p><code>grep</code> stands for global search for regular expression and printout. It searches a file for a particular pattern (RegEx) of characters and displays all lines that contain that pattern.</p>
+
+  <h3>Syntax</h3>
+  <pre><code class="bash">grep [OPTIONS] pattern file(s)</code></pre>
+  <blockquote class="note">
+      <p>Run these commands on your local to see the color difference to understand the outputs.</p>
+  </blockquote>
+
+  <!-- Table: Regex Expressions -->
+  <table>
+    <thead>
+        <tr>
+            <th>Regex Expression</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>^abc</code></td>
+            <td>Matches lines starting with "abc"</td>
+            <td><code>^abc123</code></td>
+        </tr>
+        <tr>
+            <td><code>xyz$</code></td>
+            <td>Matches lines ending with "xyz"</td>
+            <td><code>123xyz</code></td>
+        </tr>
+        <tr>
+            <td><code>a.b</code></td>
+            <td>Matches any character between "a" and "b"</td>
+            <td><code>a1b</code>, <code>a#b</code></td>
+        </tr>
+        <tr>
+            <td><code>[0-9]</code></td>
+            <td>Matches any single digit</td>
+            <td><code>5</code>, <code>9</code></td>
+        </tr>
+        <tr>
+            <td><code>[^aeiou]</code></td>
+            <td>Matches any character except vowels</td>
+            <td><code>b</code>, <code>1</code></td>
+        </tr>
+        <tr>
+            <td><code>ab*</code></td>
+            <td>Matches "a" followed by zero or more "b"</td>
+            <td><code>a</code>, <code>ab</code>, <code>abb</code></td>
+        </tr>
+        <tr>
+            <td><code>(abc\|def)</code></td>
+            <td>Matches either "abc" or "def"</td>
+            <td><code>abc</code>, <code>def</code></td>
+        </tr>
+        <tr>
+            <td><code>\d</code></td>
+            <td>Matches any digit</td>
+            <td><code>1</code>, <code>9</code></td>
+        </tr>
+        <tr>
+            <td><code>\w</code></td>
+            <td>Matches any word character</td>
+            <td><code>a</code>, <code>3</code>, <code>_</code></td>
+        </tr>
+        <tr>
+            <td><code>.*</code></td>
+            <td>Matches any sequence of characters</td>
+            <td><code>abc123</code>, <code>xyz</code></td>
+        </tr>
+        <tr>
+            <td><code>a+</code></td>
+            <td>Matches one or more occurrences of "a"</td>
+            <td><code>a</code>, <code>aa</code>, <code>aaa</code></td>
+        </tr>
+        <tr>
+            <td><code>\bword\b</code></td>
+            <td>Matches the whole word "word"</td>
+            <td><code>word</code>, <code>words</code></td>
+        </tr>
+    </tbody>
+</table>
+
+  <!-- Example Usage -->
+  <h3>Example Usage</h3>
+
+  <!-- Example 1: Basic Usage -->
+  <h4>1. Basic Usage</h4>
+  <pre><code class="bash">grep "is" lines.txt</code></pre>
+  <p>Output:</p>
+  <pre><code>5. The Mona Lisa, painted by Leonardo da Vinci, is housed in the Louvre Museum in Paris.
+7. The Great Wall of China is the longest wall in the world, stretching over 13,000 miles.
+9. "To be or not to be, that is the question" is a famous soliloquy from Shakespeare's Hamlet.
+10. Jupiter is the largest planet in our solar system and has a strong magnetic field.
+12. The platypus is a monotreme, a unique mammal that lays eggs instead of giving birth.
+13. The Pacific Ocean is the largest and deepest ocean on Earth.</code></pre>
+
+  <!-- Example 2: Search for the pattern irrespective of the case -->
+  <h4>2. Search for the pattern irrespective of the case</h4>
+  <pre><code class="bash">grep "IS" lines.txt -i</code></pre>
+  <p>Output:</p>
+  <pre><code>5. The Mona Lisa, painted by Leonardo da Vinci, is housed in the Louvre Museum in Paris.
+7. The Great Wall of China is the longest wall in the world, stretching over 13,000 miles.
+9. "To be or not to be, that is the question" is a famous soliloquy from Shakespeare's Hamlet.
+10. Jupiter is the largest planet in our solar system and has a strong magnetic field.
+12. The platypus is a monotreme, a unique mammal that lays eggs instead of giving birth.
+13. The Pacific Ocean is the largest and deepest ocean on Earth.</code></pre>
+
+  <!-- Example 3: Count of number of matches -->
+  <h4>3. Count of number of matches</h4>
+  <pre><code class="bash">grep "is" lines.txt -c</code></pre>
+  <p>Output:</p>
+  <pre><code>6</code></pre>
+
+  <!-- Example 4: Check for the whole word -->
+  <h4>4. Check for the whole word</h4>
+  <p>See the output for <code>1</code> you will find that it even matched <code>is</code>
+  when it was a part of <code>Lisa</code> so that is so counted but if you want to just check for the word <code>is</code> not parts of the words to get the pattern then,
+  </p>
+  <pre><code class="bash">grep "is" lines.txt -w</code></pre>
+  <p>Output:</p>
+  <pre><code>5. The Mona Lisa, painted by Leonardo da Vinci, is housed in the Louvre Museum in Paris.
+7. The Great Wall of China is the longest wall in the world, stretching over 13,000 miles.
+9. "To be or not to be, that is the question" is a famous soliloquy from Shakespeare's Hamlet.
+10. Jupiter is the largest planet in our solar system and has a strong magnetic field.
+12. The platypus is a monotreme, a unique mammal that lays eggs instead of giving birth.
+13. The Pacific Ocean is the largest and deepest ocean on Earth.</code></pre>
+
+  <!-- Example 5: Get line number while displaying the output match -->
+  <h4>5. Get line number while displaying the output match</h4>
+  <pre><code class="bash">grep "is" lines.txt -n</code></pre>
+  <p>Output:</p>
+  <pre><code>5:5.The Mona Lisa, painted by Leonardo da Vinci, is housed in the Louvre Museum in Paris.
+7:7.The Great Wall of China is the longest wall in the world, stretching over 13,000 miles.
+9:9."To be or not to be, that is the question" is a famous soliloquy from Shakespeare's Hamlet.
+10:10.Jupiter is the largest planet in our solar system and has a strong magnetic field.
+12:12.The platypus is a monotreme, a unique mammal that lays eggs instead of giving birth.
+13:13.The Pacific Ocean is the largest and deepest ocean on Earth.</code></pre>
+
+    <!-- Example 6: Search for multiple patterns at once -->
+    <h4>6. Search for multiple patterns at once</h4>
+    <pre><code class="bash">grep -e "is" -e "the" lines.txt</code></pre>
+    <p>Output:</p>
+    <pre><code>5. The Mona Lisa, painted by Leonardo da Vinci, is housed in the Louvre Museum in Paris.
+      6. Bananas are berries, while strawberries are not, according to botanical classification.
+      7. The Great Wall of China is the longest wall in the world, stretching over 13,000 miles.
+      9. "To be or not to be, that is the question" is a famous soliloquy from Shakespeare's Hamlet.
+      10. Jupiter is the largest planet in our solar system and has a strong magnetic field.
+      11. The Eiffel Tower was completed in 1889 and stands at a height of 324 meters.
+      12. The platypus is a monotreme, a unique mammal that lays eggs instead of giving birth.
+      13. The Pacific Ocean is the largest and deepest ocean on Earth.
+      15. The first computer programmer was Ada Lovelace, who worked on Charles Babbage's Analytical Engine.</code></pre>
+
+  <!-- Example 7: Search for a pattern in all the files recursively in a directory -->
+  <h4>7. Search for a pattern in all the files recursively in a directory</h4>
+  <pre><code class="bash">grep -R "Elephant" .</code></pre>
+  <p>Output:</p>
+  <pre><code>./head.md:3. Elephants are the largest land animals, with a gestation period of about 22 months.
+./head.md:3. Elephants are the largest land animals, with a gestation period of about 22 months.
+./head.md:3. Elephants are the largest land animals, with a gestation period of about 22 months.
+./head.md:3. Elephants are the largest land animals, with a gestation period of about 22 months.
+./tail.md:3. Elephants are the largest land animals, with a gestation period of about 22 months.
+./grep.md:3. Elephants are the largest land animals, with a gestation period of about 22 months.
+./lines.txt:3. Elephants are the largest land animals, with a gestation period of about 22 months.</code></pre>
+
+</article>
 
         <!-- Elements -->
         <article id="elements">
