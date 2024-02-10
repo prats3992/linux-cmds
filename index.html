@@ -51,6 +51,12 @@
         </div>
         <nav>
           <ul>
+            <li><a href="#dk">Don't know what to use</a></li>
+            <li><a href="https://github.com/prats3992/linux-cmds">Do more advanced stuff</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <ul>
             <li><a href="#cd">cd</a></li>
             <li><a href="#cp">cp</a></li>
             <li><a href="#ls">ls</a></li>
@@ -76,14 +82,173 @@
             <li><a href="#touch">touch</a></li>
             <li><a href="#wc">wc</a></li>
             <li><a href="#chmod">chmod</a></li>
-            <li><a href="#history">history</a></li>
+            <li><a href="#pwd">pwd</a></li>
           </ul>
         </nav>
         </header>
 
       <!-- Main -->
       <div id="main">
+
+        <article id="dk">
+          <h2 class="major">Linux Commands for Beginners</h2>
+          <h3>Introduction</h3>
+          <p>Welcome to the world of Linux commands! This guide is designed for beginners to help you get started with some essential commands for navigating and interacting with the Linux terminal.</p>
+      
+          <h2 class="major">Commands List</h2>
+          <table>
+            <thead>
+                <tr>
+                    <th>Command</th>
+                    <th>Description</th>
+                    <th>More Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>pwd</code></td>
+                    <td>Print the current working directory</td>
+                    <td><a href="#pwd">pwd</a></td>
+                </tr>
+                <tr>
+                    <td><code>ls</code></td>
+                    <td>List files and directories</td>
+                    <td><a href="#ls">ls</a></td>
+                </tr>
+                <tr>
+                    <td><code>cd</code></td>
+                    <td>Change directory</td>
+                    <td><a href="#cd">cd</a></td>
+                </tr>
+                <tr>
+                    <td><code>cat</code></td>
+                    <td>Concatenate and display file content</td>
+                    <td><a href="#cat">cat</a></td>
+                </tr>
+                <tr>
+                    <td><code>cp</code></td>
+                    <td>Copy files and directories</td>
+                    <td><a href="#cp">cp</a></td>
+                </tr>
+                <tr>
+                    <td><code>mv</code></td>
+                    <td>Move or rename files and directories</td>
+                    <td><a href="#mv">mv</a></td>
+                </tr>
+                <tr>
+                    <td><code>mkdir</code></td>
+                    <td>Create directories</td>
+                    <td><a href="#mkdir">mkdir</a></td>
+                </tr>
+                <tr>
+                    <td><code>rm</code></td>
+                    <td>Remove files and directories</td>
+                    <td><a href="#rm">rm</a></td>
+                </tr>
+                <tr>
+                    <td><code>rmdir</code></td>
+                    <td>Remove empty directories</td>
+                    <td><a href="#rmdir">rmdir</a></td>
+                </tr>
+                <tr>
+                    <td><code>grep</code></td>
+                    <td>Search for patterns in files</td>
+                    <td><a href="#grep">grep</a></td>
+                </tr>
+                <tr>
+                    <td><code>head</code></td>
+                    <td>Display the beginning of a file</td>
+                    <td><a href="#head-tail">head</a></td>
+                </tr>
+                <tr>
+                    <td><code>tail</code></td>
+                    <td>Display the end of a file</td>
+                    <td><a href="#head-tail">tail</a></td>
+                </tr>
+                <tr>
+                    <td><code>diff</code></td>
+                    <td>Compare files line by line</td>
+                    <td><a href="#diff">diff</a></td>
+                </tr>
+                <tr>
+                    <td><code>wc</code></td>
+                    <td>Count lines, words, and characters in a file</td>
+                    <td><a href="#wc">wc</a></td>
+                </tr>
+                <tr>
+                    <td><code>chmod</code></td>
+                    <td>Change file permissions</td>
+                    <td><a href="#chmod">chmod</a></td>
+                </tr>
+            </tbody>
+        </table>
         
+      
+          <h3>Most Important: <code>scp</code></h3>
+          <p>The <code>scp</code> command is used to securely copy files between a local and remote host over a network. It stands for "secure copy" and is based on the SSH (Secure Shell) protocol. <code>scp</code> provides encryption and authentication, making it a secure way to transfer files.</p>
+          <p>To use <code>scp</code>, you need to specify the source file or directory and the destination where you want to copy the file or directory. The source and destination can be on the local machine or on a remote machine.</p>
+          <p>For detailed usage see: <a href="#scp">scp</a></p>
+      
+          <h2 class="major"><a href="#operators">Redirection Operators</a></h2>
+          <table>
+            <thead>
+                <tr>
+                    <th>Operator</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>&gt;</code></td>
+                    <td>Redirects the output of a command to a file, overwriting the file if it already exists</td>
+                </tr>
+                <tr>
+                    <td><code>&gt;&gt;</code></td>
+                    <td>Redirects the output of a command to a file, appending the output to the file if it already exists</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;</code></td>
+                    <td>Redirects the input of a command from a file</td>
+                </tr>
+                <tr>
+                    <td><code>2&gt;</code></td>
+                    <td>Redirects the error output of a command to a file, overwriting the file if it already exists</td>
+                </tr>
+                <tr>
+                    <td><code>2&gt;&gt;</code></td>
+                    <td>Redirects the error output of a command to a file, appending the output to the file if it already exists</td>
+                </tr>
+                <tr>
+                    <td><code>&amp;&gt;</code></td>
+                    <td>Redirects both the standard output and error output of a command to a file, overwriting the file if it already exists</td>
+                </tr>
+                <tr>
+                    <td><code>&amp;&gt;&gt;</code></td>
+                    <td>Redirects both the standard output and error output of a command to a file, appending the output to the file if it already exists</td>
+                </tr>
+            </tbody>
+        </table>
+      </article>
+      
+      <article id="pwd">
+        <h2 class="major">pwd</h2>
+        <p>It returns the <b style="text-transform: uppercase;">Absolute Path</b> of the current working directory.</p>
+
+        <blockquote>
+            <p><strong>NOTE:</strong> An absolute path is defined as the specifying the location of a file or directory from the root directory (/).<br>
+              In other words, we can say an absolute path is a complete path from the start of the actual filesystem from the (/) directory.</p>
+        </blockquote>
+    
+        <p>On running this command</p>
+        <pre><code class="bash">pwd
+        </code></pre>
+    
+        <p>I get the following output</p>
+        <pre><code class="bash">/home/pratham/linux-cmds
+        </code></pre>
+    </article>
+    
+
         <article id="cd">
           <h2 class="major">cd</h2>
           <!-- <span class="image main"><img src="images/pic01.jpg" alt="" /></span> -->
